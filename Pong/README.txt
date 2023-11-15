@@ -7,18 +7,13 @@ O objetivo é fazer com que a bola passe pela raquete adversária, marcando pont
 
  As versões disponíveis são:
 
-Pong Multiplayer Local
-
-Navegue até a pasta pong_multiplayer_local.
-Execute o jogo para desfrutar de uma emocionante competição local com amigos na mesma máquina.
+Pong Multiplayer (local)
 Controles:
 Jogador 1: Utilize as teclas WASD.
 Jogador 2: Utilize as setas do teclado.
 
-Pong Solo vs Computador
-
-Navegue até a pasta pong_solo_vs_computer.
-Inicie o jogo para testar suas habilidades em um duelo contra o computador.
-Lógica do Jogo
+Pong Solo 
+Jogador: Utilize as setas do teclado.
+Joga contra a máquina.
 
 
