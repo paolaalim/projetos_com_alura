@@ -30,10 +30,3 @@ while (chute != numeroSecreto) {
 
 let palavraTentativas = tentativas > 1 ? 'tentativas' : 'tentativa';
 alert(`Isso aí! você descobriu o número secreto ${numeroSecreto}, com ${tentativas} ${palavraTentativas}.`);
-
-// if (tentativas > 1){
-//     alert('Isso aí! você descobriu o número secreto ' + numeroSecreto + ', com ' + tentativas + ' tentativas.');
-// }else{
-//     alert('Isso aí! você descobriu o número secreto '+numeroSecreto+
-//     ', com '+tentativas+' tentativa.');
-// }
