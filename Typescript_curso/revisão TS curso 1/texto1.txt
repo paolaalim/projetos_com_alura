@@ -1,0 +1,30 @@
+[00:00] Vamos fazer uma revisão. Nós vimos que precisamos baixar o compilador TypeScript através do node do “npn”, após instalado não é suficiente só baixá-lo, precisamos criar o arquivo "tsconfig.json", o arquivo centro nervoso do compilador. Toda vez que você executar esse compilador, ele vai ler esse arquivo para saber o que ele tem que fazer.
+
+[00:22] Em se tratando o que ele tem que fazer, o que precisamos dizer para o compilador? Precisamos dizer que onde estar a pasta com os arquivos TypeScript que ele vai ter que compilar, todos os nossos arquivos TypeScript ficaram dentro da pasta "app", se você escrever algum arquivo "ts" fora de "app", você não está seguindo o fluxo do treinamento. Está bom?
+
+[00:42] Precisamos dizer através de CompilerOptions onde os arquivos compilados serão gerados. Estamos dizendo que qualquer arquivo modificado na pasta 'app" vai ser gerado na pasta "dist" com a extensão "js" compilado transformado para JavaScript.
+
+[01:01] Também colocamos noEmitOnError para dizer que se o arquivo TypeScript que eu estou salvando tiver um problema de compilação, que não faz sentido gerar um arquivo "js" para ele, então nada vai acontecer, nenhum arquivo "js" vai ser gerado. Está bom?
+
+[01:17] Uma outra coisa que vimos no projeto é que quando eu vou lá no meu "package.json" criamos dois scripts, o compile e o watch. O compile quando executo vai compilar, vai transformar meus arquivos "ts" para JavaScript na devida pasta, mas só que ficar rodando esse comando toda hora não é muito legal, por isso criamos o watch.
+
+[01:44] Esse watch vai ficar escutando, qualquer modificação dentro da pasta "dist" e se você modificou qualquer arquivo "ts" lá dentro automaticamente ele vai gerar o arquivo dentro da pasta "js". Tudo maravilhoso, mas vimos que precisamos compartilhar a pasta "dist" no navegador utilizando o nosso Live Server e, ao mesmo tempo, precisamos reexecutar o compilador do TypeScript.
+
+[02:10] Como conseguimos isso? Executando o comando start, porque esse comando start vai executar o npn run watch combinado com o do server. É tudo maravilhoso, vamos para o abraço, porque qualquer alteração feita no meu arquivo "ts" o compilador TypeScript vai escutar, vai gravar na pasta "dist".
+
+[02:30] E o Live Server qualquer modificação na pasta "dist" feita, ele vai fazer o refresh no navegador, então conseguimos alterando em um único lugar todo nosso pipeline vai ser executado e o resultado será refletido no navegador.
+
+[02:46] Nós vimos também que na hora que declaramos arquivos TypeScript, como o nome diz, o TypeScript vai gerar um monte de checagem no nosso código e uma das checagens que nós vimos é que se eu omito um parâmetro no construtor da minha classe ele vai me indicar que tem um erro, então, eu como programador, vou lembrar lá e vou verificar qual parâmetro que eu tenho que passar.
+
+[03:07] Vimos que ele também me permite ter o auto complete mais apurado, isso significa que quando eu clico .data eu consigo ter esse auto complete das propriedades da minha classe.
+
+[03:22] Outra coisa que vimos é que o TypeScript me permite, por exemplo, se eu cometo uma gafe na hora de digitar, como ele sabe que estou utilizando tipo "negociação", ele sabe que você tem que escrever o correto, que não existe, não tem ninguém declarado aqui para nós.
+
+[03:39] Também nós vimos que ao definir o nosso modelo, que podemos abdicar do modo privado do JavaScript usando a sintaxe tralha e nós substituímos pela instrução private do TypeScript, isso significa que se eu estou utilizando o meu auto complete, a própria IDE é integrada com o TypeScript, não vai sugerir os atributos aqui como private, adotado como private.
+
+[04:08] Se eu removo esse private e salvo, volto lá, ele vai aparecer aqui porque não disse que eu quero esconder ele do desenvolvedor, que eu quero tornar ele privado.
+
+[04:21] Se você está curioso para saber qual é o tipo dele, quando você não coloca nada é mesma coisa que public, tem um bônus aqui. Se você clicar agora aqui, todo mundo que é public aparece aqui para você, só que o TypeScript me permiti omitir o tipo public e inferir que é public quando você não define nenhum modificador de acesso.
+
+[04:49] Temos tudo no lugar no entendimento embrionário, básico de TypeScript para podermos agora construir nossa aplicação e, à medida que vamos construindo nossa aplicação, vamos vendo qual recurso do TypeScript pode ajudar a escrever um código lindo, sem defeito, garantido que vai rodar sem problema durante a runtime. Está bom? Vejo vocês no próximo capítulo.
+

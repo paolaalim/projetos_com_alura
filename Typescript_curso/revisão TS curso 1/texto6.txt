@@ -1,0 +1,29 @@
+[00:00] Vamos para uma revisão. Rapidinho. O que vimos nesse capítulo? Vimos que a criação, a transformação do input do usuário, dos dados da UI em uma negociação, a lógica de conversão estava dentro do meu controller.
+
+[00:17] Mas aprendemos que poderia ser interessante mover essa lógica que recebe uma data em string, uma quantidade em string e um valor em string para a própria classe negociação.
+
+[00:27] Mas a nossa primeira tentativa não deu certo, porque, ao adicionar no nosso modelo de negociação, o método criaDe, cria de string, string e string, eu precisava criar uma instância de negociação para poder utilizar esse método.
+
+[00:43] Se eu quero criar uma negociação, como eu vou primeiro criar uma negociação para depois chamar o método para criar uma negociação? Então foi uma forçação de barra, e de vez em quando isso acontece. Não é raro acontecer.
+
+[00:56] Mas vimos que o que seria interessante é que esse método, em vez de ser um método de instância, o que significa? Em vez de ser um método que eu chamo a partir de um objeto criado através de uma classe, esse item pode ser um método de classe.
+
+[01:10] Então foi por isso que, voltando em negociação, nós criamos o método criaDe como public static criaDe. Esse método, quando é estático, esse modificador static, me permite chamar diretamente, na classe, o método. Isso é muito importante.
+
+[01:28] Uma coisa que isolamos dentro deste método foi a criação dos dados da negociação diretamente para uma negociação, e nós fizemos isso, um método estático, retornando uma negociação passando os valores convertidos.
+
+[01:46] Então, o método estático, dependendo do seu cenário, pode ser vantajoso ou não. Outra coisa que vimos foi a questão dos parâmetros operacionais. Uma coisa que acontece é o seguinte. Fomos na nossa view.
+
+[02:04] É interessante que na nossa view, nós temos a opção de fazer o escalpe, escapar determinadas strings do template para que possa garantir a segurança da nossa aplicação. Tudo bem que aqui é uma aplicação reduzida e você nem vai usar isso em produção. Você vai usar um framework como angular, React, e por aí vai, mas não vamos deixar de implementar isso.
+
+[02:25] Então, o que fizemos? Adicionamos um parâmetro especial no construtor de view para dizer se eu quero fazer o escape ou não. O problema é que, ao adicionar esse segundo parâmetro no construtor de view, todo o meu outro código que chamava o construtor de view, que herdava de view e passava os parâmetros, quebrou. Porque agora eu sou obrigado a passar esse segundo parâmetro.
+
+[02:49] Como é uma aplicação pequena, não tem problema nenhum alteramos em todos os lugares e passar o valor desejado. Vai ser uma aplicação onde você tem mais de 100, 200 classes, pode ser que essa alteração da API da sua classe, do construtor da sua classe, quebre a sua aplicação e seja muito custoso você resolver isso, e você nem tem tempo para resolver.
+
+[03:10] Então, uma opção é tornar o parâmetro opcional, utilizando o recurso do TypeScript. Que recurso é esse? Eu pego o parâmetro, passo a interrogação, e isso indica para o compilador que esse parâmetro é opcional.
+
+[03:24] Se você não passar, eu vou passar só um parâmetro para o construtor. Estávamos esperando que o construtor fosse reclamar porque eu só passei um, mas nada vai acontecer porque o segundo parâmetro é opcional.
+
+[03:34] Então, o TypeScript entende que você quer “fazer vista grossa” para esse parâmetro. Mas nem por isso você precisa tratar essa situação, porque se ele é opcional, o que acontece no seu código? Então você precisa, de alguma maneira, sempre que você trabalha com parâmetros opcionais, é ter algum código, alguma lógica no construtor da sua classe para lidar com esse parâmetro.
+
+[03:54] É isso. Fizemos isso, e vamos para o próximo capítulo. Porque no próximo capítulo, nós vamos ativar alguns recursos do compilador TypeScript que vai deixar a nossa vida um pouquinho mais complicada, porém vai garantir uma maior saúde, uma maior qualidade do nosso código. Então vamos para o próximo capítulo.

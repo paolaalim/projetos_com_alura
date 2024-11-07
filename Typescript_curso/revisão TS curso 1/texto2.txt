@@ -1,0 +1,24 @@
+[00:00] Agora vou fazer uma revisão. A primeira coisa que vimos é que na nossa “negociação controller” quando definimos propriedades de uma classe, se não colocamos o tipo essa classe ganha implícito any. Ou seja, o TypeScript não sabe no momento da declaração dessa propriedade da sua classe qual é o tipo dessa propriedade, ele adota o tipo any.
+
+[00:29] O problema do tipo any é que você pode passar qualquer valor para dentro desse tipo que a aplicação vai continuar aceitando, você volta a ter mais ou menos o mesmo comportamento do JavaScript padrão.
+
+[00:42] Porque o JavaScript padrão não faz a crítica de tipos. O que vimos é que a boa prática é você em propriedades de uma classe você definir um tipo da propriedade da classe, definir tipos também não só da propriedade da classe, mas também parâmetros de métodos.
+
+[01:03] Se o meu constructor da minha classe recebe parâmetros, é uma boa prática eu explicitar o tipo. Vai deixar claro que se o desenvolvedor tentar passar algum tipo diferente daquele esperado eu vou ter um erro em tempo de compilação.
+
+[01:18] Vimos também a ideia de ativar no nosso compilador, se voltarmos lá no centro nervoso do TypeScript, o "tsconfig.json", a boa prática de começarmos um projeto do zero é colocar "noImplicitAny": true. Isso significa que o TypeSript vai te forçar a colocar any ou colocar um tipo da sua escolha na declaração de propriedades de classe e por aí vai.
+
+[01:47] Vimos também que o TypeScript eu não preciso, nesse caso, na hora que estou criando uma instância de negociação eu não preciso colocar o tipo porque quando a variável está existindo no momento e eu faço uma atribuição, o TypeScript consegue inferir o tipo.
+
+[02:02] Diferente do meu controller porque aqui eu não tenho nenhuma atribuição inicial para esse método. O TypeScript não tem como, se eu fizer isso daqui, deixar assim, o TypeScript não sabe qual é esse valor porque a atribuição está sendo feita no constructor.
+
+[02:23] Se eu chegar aqui e fazer ‘nome’, em string, eu não precisaria colocar o tipo string aqui, porque como estou atribuindo valor nesse momento que a minha instância de classe é criada, ele infere que esse método é do tipo string. Fazer isso daqui é perda de tempo, você pode fazer também, mas só se você sentir necessidade de colocar isso porque a ideia do TypeScript é você ter tipagem estática e tentar escrever um pouco menos.
+
+[03:00] No caso do html input eu não tenho aqui como saber qual é o valor inicial dessa propriedade, por isso que eu tive que colocar o tipo porque a atribuição não está sendo feita através do constructor. Vimos também que métodos é interessante colocarmos o tipo de retorno do método, se você vem em linguagens como Java normalmente o tipo é antes, é na declaração do nome do método.
+
+[03:33] Vimos que quando um método não retorna nada colocamos void e por aí vai. Resumindo as boas práticas: começou um projeto do zero noImplicitAny, vai declarar propriedades de uma classe, define o tipo logo. Se você não sabe o tipo ou se você ainda quer utilizar o any nada te impede de você chegar lá e explicitar o tipo any.
+
+[03:55] Mas você sabe que ao utilizar o tipo any eu perco todo auto complete, toda a checagem do TypeScript porque se esse método é qualquer coisa o TypeScript não consegue inferir, porém se esse método for um html input element agora a coisa muda de sentido, eu tenho o typecheckin, eu posso verificar tudo o que eu posso fazer com essa propriedade.
+
+[04:20] Por fim, limpamos o nosso código, isolamos o código que cria a negociação do próprio método, o código que limpa o formulário é o próprio para que o método adicione esse método que temos, mais fácil de ler. Vamos para o próximo capítulo, lá a coisa começa a ficar um pouco mais puxada, mas como esse curso é o curso de fundamentos vou pegar leve com vocês. Vamos lá.
+

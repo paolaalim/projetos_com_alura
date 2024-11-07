@@ -1,0 +1,27 @@
+[00:00] Vamos fazer uma revisão do que vimos neste capítulo. A primeira coisa que vimos foi a necessidade de fazer a modelagem da classe negociações, no plural, para que eu garanta que durante o ciclo de vida da minha aplicação eu só posso adicionar novas negociações em uma lista e que ninguém pode, após adicionar, alterar essa lista, novas negociações ou remover.
+
+[00:30] Nós implementamos, nós vimos durante toda essa implementação a questão dos generics porque quando tipamos um array em TypeScript por padrão ele adota o tipo any, isso significa que você pode adicionar qualquer coisa dentro dele.
+
+[00:46] Como estamos com a configuração de noimplicitany, precisamos especificar para esse tipo array qual é o tipo de dado que ele carrega. E isso nós fizemos através do generics, se eu passar o mouse aqui em cima do array vemos que na definição do TypeScript esse método é um tipo array onde eu tenho abre e fecha colchetes, sinal de maior e menor, eu chamo isso de diamante e um T, de tipo. Isso indica que para você usar esse tipo você precisa especificar um segundo tipo.
+
+[01:22] O que é esse segundo tipo? É o conteúdo que esse array carrega. Por que isso é importante? Porque primeiro o tipo array permite que sua ideia quando é bem integrada com o TypeScript só faça o autocomplete de métodos e operações que um array tem, mas quando você extrai um dado desse array, quando você usa esse generic aqui, você permite que o TypeScript infira dentro de uma lista que esse array é do tipo negociação e só as operações de negociações podem ser feitas.
+
+[01:52] Inclusive, você só vai poder adicionar dentro dessa lista de objetos do tipo negociação. Isso é muito interessante porque evita uma confusão de você ter um array onde você pode colocar qualquer coisa lá dentro.
+
+[02:08] Nós vimos também que por mais tenhamos tentado blindar a nossa lista de negociações encapsulada dentro de negociações, estamos vendo aqui que isso não foi suficiente porque quando estou pedindo para o método lista de negociações eu estou retornando uma lista de negociações que aponta para a mesma referência de memória para essa lista daqui.
+
+[02:35] Significa que o ato de eu pegar essa lista, qualquer coisa que eu faça com essa lista eu estou modificando a minha lista guardada por negociações.
+
+[02:47] A primeira solução que nós vimos foi recusar o exped operator e retornar uma nova lista com os itens da lista original que temos. Porém, o TypeScript possui o ReadOnlyarray, esse tipo indica que toda vez que você retornar esse tipo os métodos que mudam o array não estarão disponíveis em tempo de compilação.
+
+[03:13] Isso significa que se eu for lá para o meu controller e tentar agora na lista que eu peguei fazer this.negociacoes.lista().pop; não vai aparecer, você está garantindo que o desenvolvedor não vai cometer a gafe.
+
+[03:33] E se o desenvolvedor ver isso e falar: "Ué, por que eu não posso remover?" Ele vai perguntar para o desenvolvedor, vai olhar a documentação e vai ver que por uma questão de especificação ninguém pode adicionar e remover itens dessa lista.
+
+[03:54] Isso é importante para garantirmos que estamos materializando as regras da especificação do nosso modelo e o nosso código. E pelo que podemos ver até agora, parece que o JavaScript tem recursos que tornam mais fácil essa materialização da modelagem de algo do mundo real dentro do nosso código para seguir regras impedindo que o desenvolvedor faça operações que a própria definição da classe não permite que seja feita.
+
+[04:24] Ficou claro? Está aí uma revisão, vimos sobre arrays, tipagem e generics. Uma coisa a notar é o seguinte, essa lista é uma lista de negociações, aqui qual é o tipo negociação, mas eu estou retornando essa mesma lista como Readonly, eu posso fazer isso.
+
+[04:49] O que eu não posso é usar um outro tipo aqui porque não vai ser array, mas o readonly e o array são intercambiáveis, você pode utilizá-los onde tem um você pode usar o outro, não há problema nenhum por mais que eu esteja retornando um array de negociação e o tipo do retorno seja readonlyarray.
+
+[05:12] Você deve pensar: "Flávio, por que você já não definiu essa lista como Readonlyarray?" Eu não senão meu método push do adiciona não vai funcionar. Ficou claro, galera? Vamos para o próximo vídeo com coisas bem legais para deixarmos o nosso código mais enxuto e poder simplificar ainda mais o nosso código tornando-o ainda mais legível. Vamos lá.
